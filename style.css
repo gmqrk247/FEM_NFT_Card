@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --ff-body: 'Outfit', sans-serif;
+    --primary-soft-blue: hsl(215, 51%, 70%);
+    --primray-cyan: hsl(178,100%,50%);
+    --netural-dark-bg: hsl(217,54%,11%);
+    --neutral-dark-card:hsl(216,50%,16%);
+    --neutral-dark-line:hsl(215,32%,27%);
+    --neutral-white:hsl(0,0%,100%);
+    --fs-paragraph: 18px;
+    --border-radius: 10px;
+}
+
+body{
+    background: var(--netural-dark-bg);
+    display: grid;
+    place-content: center;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    justify-content: space-between;
+    background: var(--neutral-dark-card);
+    padding: 1.4rem;
+    border-radius: var(--border-radius);
+    width: 360px;
+}
+
+.card-container .card-image{
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    position: relative;
+}
+
+.card-container .card-image::after{
+    isolation: isolate;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(178.1, 100%, 50%, 0.46);
+    background-image: url('images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    
+    display: none;
+}
+
+.card-container .card-image:hover::after{
+    
+    display: block;
+}
+
+.card-container .card-infos{
+    margin-left: .3rem;
+} 
+
+.card-infos .title a{
+    color: var(--neutral-white);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.card-infos .title a:hover {
+    color: var(--primray-cyan);
+}
+
+.card-infos .description {
+    color: var(--primary-soft-blue);
+    font-size: var(--fs-paragraph);
+    width: 30ch;
+    padding-bottom: 1.7rem;
+}
+
+.card-infos .purchase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase .price{
+    display: flex;
+    gap: .5rem;
+    color: var(--primray-cyan);
+    font-weight: bold;
+}
+
+.purchase .time-left{
+    display: flex;
+    gap: .5rem;
+    color: var(--primary-soft-blue);
+}
+
+.divider{
+    width: 100%;
+    height: 2px;
+    background: var(--neutral-dark-line);
+    margin: 1.3rem auto;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+}
+
+.creator img{
+    width: 10%;
+    border: 1.5px solid white;
+    border-radius: 50%;
+}
+
+.creator p {
+    color: var(--primary-soft-blue);
+}
+
+.creator p a {
+    color: var(--neutral-white);
+    font-weight: 400;
+}
+
+.creator p a:hover {
+    color: var(--primray-cyan);
+}
